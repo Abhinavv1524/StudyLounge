@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r+=tz$uft1kgmn#+0lzvo)uph=+2fmy8d8572jy1)10h4-hbyd'
+# SECRET_KEY = 'django-insecure-r+=tz$uft1kgmn#+0lzvo)uph=+2fmy8d8572jy1)10h4-hbyd'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -139,4 +139,7 @@ import os
 
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'fallback-key-for-dev')
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost').split(',')
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', 'localhost,studylounge.onrender.com').split(',')
+
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
